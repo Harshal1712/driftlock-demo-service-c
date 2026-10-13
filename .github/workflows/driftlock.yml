@@ -1,0 +1,18 @@
+name: DriftLock
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: RAJANGKR/cross-repo-dependancy@main
+        with:
+          against: |
+            https://github.com/Harshal1712/driftlock-demo-service-a
+            https://github.com/Harshal1712/driftlock-demo-service-b
+          fail-on: confirmed
